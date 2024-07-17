@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="172.0" prefWidth="396.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brh.mp3_player_2531.Controller">
+<VBox prefHeight="362.0" prefWidth="396.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brh.mp3_player_2531.Controller">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -37,4 +37,7 @@
          <Insets />
       </VBox.margin>
    </GridPane>
+   <ListView prefHeight="121.0" prefWidth="356.0" />
+   <Label text="Lautstärke" />
+   <Slider fx:id="volumeSlider" blockIncrement="20.0" max="1.0" onDragDetected="#setVolume" value="0.5" />
 </VBox>

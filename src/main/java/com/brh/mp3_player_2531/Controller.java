@@ -2,6 +2,7 @@ package com.brh.mp3_player_2531;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -13,6 +14,10 @@ public class Controller {
 
     @FXML
     private Label pathText;
+
+    @FXML
+    private Slider volumeSlider;
+
 
     @FXML
     protected void search() {
@@ -37,16 +42,26 @@ public class Controller {
     @FXML
     protected void stop() {
         System.out.println("Stop");
+        music.stop();
     }
 
     @FXML
     protected void pause() {
         System.out.println("Pause");
+        music.pause();
     }
 
     @FXML
     protected void mute() {
         System.out.println("Mute");
+        music.pause();
     }
 
+
+    @FXML
+    protected void setVolume( ){
+        double volume = volumeSlider.getValue();
+        music.setVolume( volume );
+
+    }
 }

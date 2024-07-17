@@ -8,6 +8,7 @@ import java.io.File;
 public class Music {
 
     private static MediaPlayer player;
+    private boolean isMuted;
 
     public void play( String file){
          Media media = new Media( new File(file).toURI().toString() );
@@ -23,10 +24,14 @@ public class Music {
 
     public void pause(){
         if(player == null) return;
+        player.stop();
+
     }
 
     public void mute(){
         if(player == null) return;
+        isMuted = !isMuted;
+        player.setMute(isMuted);
     }
 
     public void stop(){
@@ -34,6 +39,10 @@ public class Music {
         player.stop();
     }
 
+    public void setVolume( double value ){
+        if(player == null) return;
+        player.setVolume(value);
+    }
 
 
 
