@@ -3,7 +3,6 @@ package com.brh.mp3_player_2531;
 import java.util.ArrayList;
 
 public class Playlist {
-
     private String name;
     private int currentSongNumber;
     private ArrayList<String> list;

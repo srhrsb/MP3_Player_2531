@@ -37,7 +37,7 @@
          <Insets />
       </VBox.margin>
    </GridPane>
-   <ListView prefHeight="121.0" prefWidth="356.0" />
+   <ListView fx:id="playlist" prefHeight="121.0" prefWidth="356.0" />
    <Label text="Lautstärke" />
    <Slider fx:id="volumeSlider" blockIncrement="20.0" max="1.0" onDragDetected="#setVolume" value="0.5" />
 </VBox>
