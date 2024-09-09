@@ -17,6 +17,8 @@ public class Controller {
     @FXML
     private Slider volumeSlider;
 
+    private Playlist playList;
+
     /**
      * Durchsucht einen Ordner bzw. Dialog und zeigt die entsprechenden Titel im
      * listView an
@@ -43,6 +45,9 @@ public class Controller {
         for( var f : selectedFiles){
            playlistView.getItems().add( f.getName());
         }
+
+
+       // playList =
 
     }
 

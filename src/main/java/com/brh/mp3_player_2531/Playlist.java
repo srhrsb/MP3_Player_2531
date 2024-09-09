@@ -1,24 +1,19 @@
 package com.brh.mp3_player_2531;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Playlist {
     private String name;
     private int currentSongNumber;
-    private ArrayList<String> list;
+    private ArrayList<File> list;
     
-    public Playlist(String name, ArrayList<String> list) {
+    public Playlist(String name, ArrayList<File> list) {
         this.name = name;
         this.list = list;
         this.currentSongNumber = 0;
     }
 
-    public boolean addSong( String path ){
-        if( !path.isEmpty() && path.endsWith(".mp3")) {
-           return list.add(path);
-        }
-        return false;
-    }
 
     public boolean deleteSong( String path ){
         return list.remove(path);
@@ -27,7 +22,8 @@ public class Playlist {
     public String getNext(){
 
         int index = ++currentSongNumber % list.size()-1;
-        return list.get(index);
+
+        return list.get(index).getAbsolutePath();
 
         //        Alternativ:
         //        currentSongNumber++;
@@ -45,6 +41,6 @@ public class Playlist {
             currentSongNumber = list.size()-1;
         }
 
-        return list.get(currentSongNumber);
+        return list.get(currentSongNumber).getAbsolutePath();
     }
 }
