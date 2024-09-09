@@ -8,6 +8,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
@@ -46,8 +47,7 @@ public class Controller {
            playlistView.getItems().add( f.getName());
         }
 
-
-       // playList =
+        playList = new Playlist("Playlist 1", selectedFiles);
 
     }
 
@@ -55,7 +55,9 @@ public class Controller {
     @FXML
     protected void play() {
         System.out.println("Play");
-        //music.play( pathText.getText() );
+        String path = playList.getNext();
+        if(!path.isEmpty())
+             music.play(path);
     }
 
     @FXML

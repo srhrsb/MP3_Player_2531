@@ -2,13 +2,14 @@ package com.brh.mp3_player_2531;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Playlist {
     private String name;
     private int currentSongNumber;
-    private ArrayList<File> list;
+    private List<File> list;
     
-    public Playlist(String name, ArrayList<File> list) {
+    public Playlist(String name, List<File> list) {
         this.name = name;
         this.list = list;
         this.currentSongNumber = 0;
