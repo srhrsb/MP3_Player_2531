@@ -13,7 +13,7 @@ import java.util.List;
 public class Controller {
     public final Music music = new Music();
     @FXML
-    private ListView playlist;
+    private ListView playlistView;
     @FXML
     private Slider volumeSlider;
 
@@ -24,14 +24,28 @@ public class Controller {
     @FXML
     protected void search() {
         System.out.println("Suchen");
-        Stage stage = (Stage) playlist.getScene().getWindow();
+        Stage stage = (Stage) playlistView.getScene().getWindow();
         FileChooser file = new FileChooser();
         List<File> selectedFiles = file.showOpenMultipleDialog( stage );
 
+        //files in Konsole ausgeben 3 Möglichkeiten:
+        for( var f : selectedFiles){
+            System.out.println(f.getPath());
+        }
 
+        for( int i = 0; i < selectedFiles.size(); i++){
+            System.out.println( selectedFiles.get(i).getAbsolutePath());
+        }
 
+        selectedFiles.forEach(System.out::println);
+
+        //listview mit pfaden füllen
+        for( var f : selectedFiles){
+           playlistView.getItems().add( f.getName());
+        }
 
     }
+
 
     @FXML
     protected void play() {
