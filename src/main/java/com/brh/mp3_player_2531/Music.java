@@ -11,7 +11,7 @@ public class Music {
     private static MediaPlayer player;
     private boolean isMuted;
 
-    public void play( String file, Consumer<Integer> onEndCallback){
+    public void play( String file, Callback onEnd){
          Media media = new Media( new File(file).toURI().toString() );
 
          if(player != null){
@@ -19,7 +19,7 @@ public class Music {
          }
 
          player = new MediaPlayer( media );
-         player.setOnEndOfMedia(  ( ()-> onEndCallback.accept(0) ));
+         player.setOnEndOfMedia(  ( ()-> onEnd.invoke() ));
 
          player.stop();
          player.play();

@@ -78,8 +78,7 @@ public class Controller {
         }
     }
 
-    public void onMusicEnd( int lastSongNumber ){
-        System.out.println("last song:" + lastSongNumber);
+    public void onMusicEnd(){
         play();
     }
 
