@@ -8,6 +8,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+
+
+    /**
+     * Startmethode von JavaFX Application, Zuweisung des View XML Dokuments
+     * um die UI zu gestalten
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view.fxml"));

@@ -29,6 +29,8 @@ public class Controller {
         System.out.println("Suchen");
         Stage stage = (Stage) playlistView.getScene().getWindow();
         FileChooser file = new FileChooser();
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Music", "*.mp3","*.wav");
+        file.getExtensionFilters().add(filter);
         List<File> selectedFiles = file.showOpenMultipleDialog( stage );
 
         //files in Konsole ausgeben 3 Möglichkeiten:
@@ -51,6 +53,18 @@ public class Controller {
 
     }
 
+    @FXML
+    protected void selectionClicked() {
+
+       int index = playlistView.getFocusModel().getFocusedIndex();
+       String path =  playList.getAtIndex( index );
+
+       if(!path.isEmpty()){
+            setFocus( playList.getCurrentSongNumber() );
+            System.out.println("Play: " + path);
+            music.play(path, this::onMusicEnd);
+       }
+    }
 
     @FXML
     protected void play() {
@@ -60,8 +74,13 @@ public class Controller {
         if(!path.isEmpty()){
             setFocus( playList.getCurrentSongNumber() );
             System.out.println("Play: " + path);
-            music.play(path);
+            music.play(path, this::onMusicEnd);
         }
+    }
+
+    public void onMusicEnd( int lastSongNumber ){
+        System.out.println("last song:" + lastSongNumber);
+        play();
     }
 
     private void setFocus( int number ){

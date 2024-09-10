@@ -4,13 +4,14 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.util.function.Consumer;
 
 public class Music {
 
     private static MediaPlayer player;
     private boolean isMuted;
 
-    public void play( String file){
+    public void play( String file, Consumer<Integer> onEndCallback){
          Media media = new Media( new File(file).toURI().toString() );
 
          if(player != null){
@@ -18,6 +19,8 @@ public class Music {
          }
 
          player = new MediaPlayer( media );
+         player.setOnEndOfMedia(  ( ()-> onEndCallback.accept(0) ));
+
          player.stop();
          player.play();
     }

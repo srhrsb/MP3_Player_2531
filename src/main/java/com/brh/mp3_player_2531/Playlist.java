@@ -12,7 +12,7 @@ public class Playlist {
     public Playlist(String name, List<File> list) {
         this.name = name;
         this.list = list;
-        this.currentSongNumber = 0;
+        this.currentSongNumber = -1;
     }
 
 
@@ -47,5 +47,10 @@ public class Playlist {
 
     public int getCurrentSongNumber() {
         return currentSongNumber;
+    }
+
+    public String getAtIndex( int number ){
+        currentSongNumber = number;
+        return list.get(currentSongNumber).getAbsolutePath();
     }
 }
