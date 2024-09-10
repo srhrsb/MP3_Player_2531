@@ -22,9 +22,9 @@ public class Playlist {
 
     public String getNext(){
 
-        int index = ++currentSongNumber % list.size()-1;
+        currentSongNumber = ++currentSongNumber % list.size();
 
-        return list.get(index).getAbsolutePath();
+        return list.get(currentSongNumber).getAbsolutePath();
 
         //        Alternativ:
         //        currentSongNumber++;
@@ -43,5 +43,9 @@ public class Playlist {
         }
 
         return list.get(currentSongNumber).getAbsolutePath();
+    }
+
+    public int getCurrentSongNumber() {
+        return currentSongNumber;
     }
 }

@@ -54,10 +54,19 @@ public class Controller {
 
     @FXML
     protected void play() {
-        System.out.println("Play");
+
         String path = playList.getNext();
-        if(!path.isEmpty())
-             music.play(path);
+
+        if(!path.isEmpty()){
+            setFocus( playList.getCurrentSongNumber() );
+            System.out.println("Play: " + path);
+            music.play(path);
+        }
+    }
+
+    private void setFocus( int number ){
+        System.out.println("selected: "+number);
+        playlistView.getSelectionModel().select(number);
     }
 
     @FXML
