@@ -7,11 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class App extends Application {
-
+public class App extends Application{
 
     /**
      * Startmethode von JavaFX Application, Zuweisung des View XML Dokuments
+     * Pflicht da, von abstrakter Klasse geerbt
      * um die UI zu gestalten
      * @param stage
      * @throws IOException
@@ -29,3 +29,22 @@ public class App extends Application {
         launch();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
