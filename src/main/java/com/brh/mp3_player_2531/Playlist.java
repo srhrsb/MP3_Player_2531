@@ -1,6 +1,7 @@
 package com.brh.mp3_player_2531;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Playlist {
@@ -13,7 +14,7 @@ public class Playlist {
     /**
      * Liste der Files
      */
-    private List<File> list;
+    private ArrayList<File> list;
 
     /**
      * Konstruktor - Erstellen einer neuen Playlist
@@ -22,7 +23,7 @@ public class Playlist {
      */
     public Playlist(String name, List<File> list) {
         this.name = name;
-        this.list = list;
+        this.list = new ArrayList<>(list);
         this.currentSongNumber = -1;
 
     }
