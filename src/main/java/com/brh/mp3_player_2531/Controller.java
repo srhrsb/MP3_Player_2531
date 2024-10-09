@@ -50,7 +50,7 @@ public class Controller {
            playlistView.getItems().add( f.getName());
         }
 
-        playList = new Playlist("Playlist 1", selectedFiles);
+        playList = new Playlist("Playlist 1", selectedFiles);//selected Files nicht änderbar
 
     }
 

@@ -12,7 +12,7 @@ public class App extends Application{
     /**
      * Startmethode von JavaFX Application, Zuweisung des View XML Dokuments
      * Pflicht da, von abstrakter Klasse geerbt
-     * um die UI zu gestalten
+     * um die UI zu laden und zu Anzeige zu bringen
      * @param stage
      * @throws IOException
      */

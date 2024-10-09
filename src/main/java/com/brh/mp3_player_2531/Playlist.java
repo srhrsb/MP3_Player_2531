@@ -23,7 +23,7 @@ public class Playlist {
      */
     public Playlist(String name, List<File> list) {
         this.name = name;
-        this.list = new ArrayList<>(list);
+        this.list = new ArrayList<>(list); //ArrayList ist änderbar
         this.currentSongNumber = -1;
 
     }
